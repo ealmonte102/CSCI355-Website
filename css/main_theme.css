@@ -1,0 +1,378 @@
+#logo {
+  text-align: center;
+}
+
+/* Remove browser margin and padding */
+
+body {
+  padding: 0;
+  margin: 0 0 44px 0;
+  font-size: 16px;
+  font-family: Montserrat;
+}
+
+/* Navigation Bar */
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  transition: .5s;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  box-shadow: 1px 3px 5px grey;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {}
+
+.topnav-logo-link {
+  padding-top: 4px;
+}
+
+.inactive-nav-link, .active-nav-link {
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 300;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.active-nav-link {
+  background: #384b6f;
+}
+
+.active-nav-link:hover, .inactive-nav-link:hover {
+  background: #fdfdfd;
+  color: black;
+}
+
+.hamburger {
+  display: none;
+  border: 1px solid #333
+}
+
+.hamburger-icon {
+  height: 16px;
+}
+
+.hamburger:hover {
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 480px) {
+  .nav-link {
+    font-size: 0.8em;
+  }
+}
+
+/* Responsive Navigation Bar */
+
+@media screen and (max-width: 450px) {
+  /* Make navigation links invisible on small screen sizes */
+  .inactive-nav-link, .active-nav-link {
+    overflow-x: hidden;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hamburger-icon {
+    padding: 8px;
+  }
+  .topnav {
+    justify-content: space-between;
+  }
+  .topnav.responsive {
+    height: 300px;
+    flex-direction: column;
+  }
+  .topnav.responsive a {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+  .topnav.responsive .inactive-nav-link, .topnav.responsive .active-nav-link {
+    transition: opacity 2s;
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav-link.topnav-logo-link.responsive {
+    display: none;
+  }
+}
+
+/* Collapsible assignments */
+
+.collapsible-assignment {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.collapsible-assignment:after {
+  content: '\02795';
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+}
+
+.active, .collapsible-assignment:hover {
+  background-color: #666;
+  color: #f2f2f2;
+}
+
+.collapsible-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background-color: #f1f1f1;
+}
+
+.raised-sub-content {
+  box-shadow: 6px 6px 18px grey;
+}
+
+/* Headers */
+
+h1, h2 {
+  font-family: 'Teko', sans-serif;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #020202;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 3em;
+}
+
+h2 {
+  font-weight: 200;
+  color: #020202;
+  font-size: 2.5em;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+/* Unorderd Lists */
+
+ul {
+  margin: 0;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 2vw;
+  padding: 2vw;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding: 8px;
+}
+
+td:first-child {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: lightskyblue;
+}
+
+/* Main Content */
+
+#main-content {
+  margin-top: 44px;
+}
+
+/* Parallax Backgrounds */
+
+.parallax-background {
+  height: 90vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+}
+
+#first-background.parallax-background {
+  background-image: url(../images/background1.jpg);
+}
+
+#second-background.parallax-background {
+  background-image: url(../images/background2.jpg);
+  width: 100%;
+  background-size: cover;
+}
+
+#browserinfo-parralax-background {
+  background-image: url(../images/bg-pattern.png);
+}
+
+/* Course Description */
+
+.description-wrapper {
+  color: #020202;
+  display: flex;
+  justify-content: center;
+  margin: 0px 8px 0px 8px;
+  border-bottom: 1px dotted #020202;
+}
+
+#last-description.description-wrapper {
+  border-bottom: none;
+}
+
+#course-requirements .description-content {
+  width: 66%;
+}
+
+#grading .description-content {
+  width: 66%;
+}
+
+#course-schedule .description-content {
+  width: 100%;
+  margin: 0 5vw;
+}
+
+.description-content {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+#course-description {
+  background-color: aliceblue;
+  padding-bottom: 8px;
+}
+
+.information-flex-container {
+  display: flex;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.information-flex-container:not(:last-child) {
+  padding-bottom: 8px;
+}
+
+.information-flex-container:not(:first-child) {
+  margin-top: 8px;
+}
+
+.grid-row {
+  width: 0;
+  flex: 1 1 0;
+  flex-basis: 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.row-header {
+  color: #020202;
+  border-top: 1px solid silver;
+  border-left: 1px solid silver;
+  border-bottom: 1px solid silver;
+  border-right: 1px dotted silver;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.row-content {
+  color: #020202;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
+  border-right: 1px solid silver;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+@media screen and (max-width: 450px) {
+  .information-flex-container {
+    flex-direction: column;
+    border: 1px solid silver;
+    border-radius: 6px;
+  }
+  .information-flex-container:not(:last-child) {
+    padding-bottom: 0;
+  }
+  .row-header {
+    padding: 10px;
+    background: #73808E;
+    color: #fdfdfd;
+    border-bottom: 1px solid silver;
+  }
+  .row-content {
+    padding: 10px;
+  }
+  .grid-row {
+    width: auto;
+    flex: 1 1 0;
+    flex-basis: 0;
+    text-align: center;
+    word-wrap: break-word;
+  }
+}
+
+#url-analyzer-description {
+  text-align: center;
+}
+
+#url-analyzer-content {
+  margin: 8px;
+  text-align: left;
+}
+
+#url-analyzer-content>table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+#url-analyzer-content>table>tbody>tr>td {
+  word-wrap: break-word;
+}
+
+.chart-container {
+  height:300px;
+  width:100%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/main_theme.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CSCI 355 Assignments</title>
+</head>
+
+<body>
+  <nav class="topnav" id="myTopNav">
+    <a id="nav-logo" class="nav-link topnav-logo-link" href="index.html">
+      <img src=images/logo-white.svg style="height:44px">
+    </a>
+    <a class="nav-link inactive-nav-link" href="https://www.zybooks.com/">Zybooks</a>
+    <a class="nav-link inactive-nav-link" href="assignments.html">Assignments</a>
+    <a class="nav-link inactive-nav-link" href="browserinfo.html">Browser Info</a>
+    <a class="nav-link active-nav-link" href="urlanalyzer.html">Url Analyzer</a>
+    <a class="nav-link hamburger" onclick="myFunction()" href="javascript:void(0)">
+      <img class="hamburger-icon" src=images/hamburger-white.svg>
+    </a>
+  </nav>
+
+  <article id="main-content">
+    <section id="url-analyzer-description">
+      <h1>URL Analyzer</h1>
+      <input id="url-file" type="file" accept="text/plain" onchange="analyzeFile()">
+    </section>
+    <section id="url-analyzer-content">
+      <table id="url-table">
+        <thead id="url-table-header">
+          <tr>
+            <th>Scheme</th>
+            <th>User Info</th>
+            <th>Host</th>
+            <th>Port</th>
+            <th>Path</th>
+            <th>Query</th>
+            <th>Fragment</th>
+            <th>IP Address</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+    <section id="summary">
+    </section>
+</body>
+
+<script type="text/javascript" src="js/urlanalyzer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
+
+</html>
