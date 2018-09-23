@@ -226,13 +226,12 @@ tbody tr:hover {
 /* Parallax Backgrounds */
 
 .parallax-background {
-  height: 90vh;
+  height: 500px;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: block;
 }
 
 #first-background.parallax-background {

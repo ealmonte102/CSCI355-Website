@@ -13,3 +13,14 @@ function myFunction() {
       logo.className = originalLogoClassName;
   }
 }
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("myTopNav").style.top = "0";
+  } else {
+    document.getElementById("myTopNav").style.top = "-44px";
+  }
+  prevScrollpos = currentScrollPos;
+}
