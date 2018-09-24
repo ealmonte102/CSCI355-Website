@@ -17,6 +17,9 @@ function analyzeFile() {
     var portUsage = {};
     for (var i = 0; i < fileContent.length; ++i) {
       try {
+        if(!(fileContent[i].startsWith("http://") || fileContent[i].startsWith("https://"))) {
+          fileContent[i] = "http://" + fileContent[i];
+        }
         const currentURL = new URL(fileContent[i]);
         var urlToResolve = dnsResolverURL + currentURL.host;
         var row = document.createElement("tr");
