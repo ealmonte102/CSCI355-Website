@@ -26,8 +26,6 @@ body {
   align-items: center;
 }
 
-.nav-link {}
-
 .topnav-logo-link {
   padding-top: 4px;
 }
@@ -248,17 +246,28 @@ tbody tr:hover {
   background-image: url(../images/bg-pattern.png);
 }
 
+#home-background1{
+  background-image: url(/images/background_code.jpg);
+}
 /* Course Description */
 
 .description-wrapper {
   color: #020202;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin: 0px 8px 0px 8px;
+  padding: 8px;
   border-bottom: 1px dotted #020202;
 }
 
-#last-description.description-wrapper {
+#about-me {
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: beige;
+  height: 500px;
+}
+
+#last-description .description-wrapper {
   border-bottom: none;
 }
 
