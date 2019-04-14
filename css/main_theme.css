@@ -1,7 +1,3 @@
-#logo {
-    text-align: center;
-}
-
 /* Remove browser margin and padding */
 
 body {
@@ -266,8 +262,21 @@ tbody tr:hover {
 
 /* Main Content */
 
-#main-content {
+.main-content {
     margin-top: 44px;
+    display: inline-block;
+    width:100%
+}
+
+header {
+    margin: 0;
+}
+header  h1 {
+    margin: 0;
+}
+
+#logo {
+    text-align: center;
 }
 
 /* Parallax Backgrounds */
@@ -279,6 +288,23 @@ tbody tr:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.csci323-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-content .csci323-section:nth-of-type(2n) {
+    background-image: linear-gradient(to top left, ghostwhite 49.99%, white 50.11%);
+}
+.main-content .csci323-section:nth-of-type(2n + 1) {
+    background-image: linear-gradient(to top left, white 49.99%, ghostwhite 50.11%);
+}
+.main-content .csci323-section:nth-of-type(4n + 1) {
+    background-image: linear-gradient(to top left, ghostwhite 49.99%, white 50.11%);
+}
+.main-content .csci323-section:last-of-type {
+    background-image: linear-gradient(to top left, white 49.99%, ghostwhite 50.11%);
 }
 
 #first-background.parallax-background {
@@ -440,10 +466,4 @@ tbody tr:hover {
 .chart-container {
     height: 100%;
     width: 100%;
-}
-
-#navbar-hidden-background {
-    background: linear-gradient(45deg, blue 50%, white 50%);
-    background-attachment: fixed;
-    height: 44px
 }
