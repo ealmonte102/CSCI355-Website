@@ -221,8 +221,8 @@ ol {
 }
 
 ol.centered50-list {
-  width: 50%;
-  margin: 8px auto;
+    width: 50%;
+    margin: 8px auto;
 }
 
 li {
@@ -240,8 +240,8 @@ table {
 }
 
 table.table50-centered {
-  width: 60%;
-  margin: 0 auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
 th {
@@ -341,12 +341,14 @@ tbody tr:hover {
 .description-content {
     text-align: left;
     margin-bottom: 8px;
-    flex: 1 auto;
+}
+
+#grading-scale {
+    flex-grow: 1;
 }
 
 #course-description {
     background-color: aliceblue;
-    padding-bottom: 8px;
 }
 
 .information-flex-container {
@@ -438,4 +440,10 @@ tbody tr:hover {
 .chart-container {
     height: 100%;
     width: 100%;
+}
+
+#navbar-hidden-background {
+    background: linear-gradient(45deg, blue 50%, white 50%);
+    background-attachment: fixed;
+    height: 44px
 }

@@ -21,6 +21,7 @@ window.onscroll = function() {
     document.getElementById("myTopNav").style.top = "0";
   } else {
     document.getElementById("myTopNav").style.top = "-44px";
+
   }
   prevScrollpos = currentScrollPos;
 }
