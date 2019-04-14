@@ -7,7 +7,7 @@
 body {
   padding: 0;
   margin: 0 0 44px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Montserrat;
 }
 
@@ -176,7 +176,17 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 1.4em;
+  font-weight: 200;
+}
+
+h5 {
+  font-size: 1.1em;
   font-weight: 200;
 }
 
@@ -184,6 +194,11 @@ h3 {
 
 ul {
   margin: 0;
+}
+
+ul.centered-list {
+  list-style-position: inside;
+  padding: 0px 0px 8px 0px;
 }
 
 /* Tables */
@@ -259,6 +274,9 @@ tbody tr:hover {
   padding: 8px;
   border-bottom: 1px dotted #020202;
 }
+.description-wrapper-col {
+  flex-direction: column;
+}
 
 #about-me {
   flex-direction: column;
@@ -296,6 +314,7 @@ tbody tr:hover {
 
 .information-flex-container {
   display: flex;
+  flex-grow: 1;
   margin-left: 32px;
   margin-right: 32px;
 }
@@ -345,13 +364,9 @@ tbody tr:hover {
     padding-bottom: 0;
   }
   .row-header {
-    padding: 10px;
     background: #73808E;
     color: #fdfdfd;
     border-bottom: 1px solid silver;
-  }
-  .row-content {
-    padding: 10px;
   }
   .grid-row {
     width: auto;
