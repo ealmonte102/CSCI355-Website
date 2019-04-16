@@ -9,6 +9,17 @@ body {
 
 /* Navigation Bar */
 
+nav {
+    background-color: #333;    
+}
+
+nav > .nav-wrapper > ul > li:hover {
+    background: #fdfdfd;
+}
+nav > .nav-wrapper > ul > li > a:hover {
+    color: black;
+}
+
 .topnav {
     background-color: #333;
     overflow: hidden;
@@ -20,6 +31,7 @@ body {
     box-shadow: 1px 3px 5px grey;
     display: flex;
     align-items: center;
+    line-height: normal;
 }
 
 .topnav-logo-link {
@@ -91,6 +103,7 @@ body {
 
     .topnav {
         justify-content: space-between;
+        line-height: normal;
     }
 
     .topnav.responsive {
@@ -139,11 +152,11 @@ body {
     margin-left: 5px;
 }
 
-.active:after {
+.active-assignment:after {
     content: "\2796";
 }
 
-.active,
+.active-assignment,
 .collapsible-assignment:hover {
     background-color: #666;
     color: #f2f2f2;
@@ -221,7 +234,7 @@ ol.centered50-list {
     margin: 8px auto;
 }
 
-li {
+.description-content > ol > li {
     text-indent: -1em;
     padding-left: 1em;
 }
