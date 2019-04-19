@@ -1,22 +1,21 @@
 /* Remove browser margin and padding */
 
 body {
-    padding: 0;
-    margin: 0 0 44px 0;
-    font-size: 14px;
     font-family: Montserrat;
+    margin: 0;
 }
 
 /* Navigation Bar */
 
 nav {
-    background-color: #333;    
+    background-color: #333;
 }
 
-nav > .nav-wrapper > ul > li:hover {
+nav>.nav-wrapper>ul>li:hover {
     background: #fdfdfd;
 }
-nav > .nav-wrapper > ul > li > a:hover {
+
+nav>.nav-wrapper>ul>li>a:hover {
     color: black;
 }
 
@@ -38,8 +37,7 @@ nav > .nav-wrapper > ul > li > a:hover {
     padding-top: 4px;
 }
 
-.inactive-nav-link,
-.active-nav-link {
+.inactive-nav-link, .active-nav-link {
     color: white;
     height: 100%;
     display: flex;
@@ -56,8 +54,7 @@ nav > .nav-wrapper > ul > li > a:hover {
     background: #384b6f;
 }
 
-.active-nav-link:hover,
-.inactive-nav-link:hover {
+.active-nav-link:hover, .inactive-nav-link:hover {
     background: #fdfdfd;
     color: black;
 }
@@ -84,33 +81,26 @@ nav > .nav-wrapper > ul > li > a:hover {
 /* Responsive Navigation Bar */
 
 @media screen and (max-width: 450px) {
-
     /* Make navigation links invisible on small screen sizes */
-    .inactive-nav-link,
-    .active-nav-link {
+    .inactive-nav-link, .active-nav-link {
         overflow-x: hidden;
         visibility: hidden;
         opacity: 0;
     }
-
     .hamburger {
         display: flex;
     }
-
     .hamburger-icon {
         padding: 8px;
     }
-
     .topnav {
         justify-content: space-between;
         line-height: normal;
     }
-
     .topnav.responsive {
         height: 300px;
         flex-direction: column;
     }
-
     .topnav.responsive a {
         height: auto;
         display: flex;
@@ -119,14 +109,11 @@ nav > .nav-wrapper > ul > li > a:hover {
         flex: 1;
         width: 100%;
     }
-
-    .topnav.responsive .inactive-nav-link,
-    .topnav.responsive .active-nav-link {
+    .topnav.responsive .inactive-nav-link, .topnav.responsive .active-nav-link {
         transition: opacity 2s;
         visibility: visible;
         opacity: 1;
     }
-
     .nav-link.topnav-logo-link.responsive {
         display: none;
     }
@@ -156,8 +143,7 @@ nav > .nav-wrapper > ul > li > a:hover {
     content: "\2796";
 }
 
-.active-assignment,
-.collapsible-assignment:hover {
+.active-assignment, .collapsible-assignment:hover {
     background-color: #666;
     color: #f2f2f2;
 }
@@ -176,44 +162,16 @@ nav > .nav-wrapper > ul > li > a:hover {
 
 /* Headers */
 
-h1,
-h2 {
-    font-family: 'Teko', sans-serif;
-    margin-bottom: 8px;
-    text-align: center;
-    color: #020202;
-}
-
-h1 {
-    font-weight: 200;
-    font-size: 3em;
-}
-
-h2 {
-    font-weight: 200;
-    color: #020202;
-    font-size: 2.5em;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-}
-
-h3 {
-    font-size: 1.5em;
-    font-weight: 200;
-}
-
-h4 {
-    font-size: 1.4em;
-    font-weight: 200;
-}
-
-h5 {
-    font-size: 1.1em;
+h1, h2, h3, h4, h5 {
+    font-family: Teko;
     font-weight: 200;
 }
 
 /* Unorderd Lists */
+
+li {
+    word-break: break-all;
+}
 
 ul {
     margin: 0;
@@ -234,7 +192,7 @@ ol.centered50-list {
     margin: 8px auto;
 }
 
-.description-content > ol > li {
+.description-content>ol>li {
     text-indent: -1em;
     padding-left: 1em;
 }
@@ -278,13 +236,14 @@ tbody tr:hover {
 .main-content {
     margin-top: 44px;
     display: inline-block;
-    width:100%
+    width: 100%
 }
 
 header {
     margin: 0;
 }
-header  h1 {
+
+header h1 {
     margin: 0;
 }
 
@@ -302,20 +261,25 @@ header  h1 {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .csci323-section {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .main-content .csci323-section:nth-of-type(2n) {
     background-image: linear-gradient(to top left, ghostwhite 49.99%, white 50.11%);
 }
+
 .main-content .csci323-section:nth-of-type(2n + 1) {
     background-image: linear-gradient(to top left, white 49.99%, ghostwhite 50.11%);
 }
+
 .main-content .csci323-section:nth-of-type(4n + 1) {
     background-image: linear-gradient(to top left, ghostwhite 49.99%, white 50.11%);
 }
+
 .main-content .csci323-section:last-of-type {
     background-image: linear-gradient(to top left, white 49.99%, ghostwhite 50.11%);
 }
@@ -438,17 +402,14 @@ header  h1 {
         border: 1px solid silver;
         border-radius: 6px;
     }
-
     .information-flex-container:not(:last-child) {
         padding-bottom: 0;
     }
-
     .row-header {
         background: #73808E;
         color: #fdfdfd;
         border-bottom: 1px solid silver;
     }
-
     .grid-row {
         width: auto;
         flex: 1 1 0;
@@ -479,4 +440,201 @@ header  h1 {
 .chart-container {
     height: 100%;
     width: 100%;
+}
+
+#hard-copy-file-selection {
+    margin-bottom: 0;
+}
+
+/* Materialize 11 column row with 3rds' and 1st*/
+
+.s11ths, .m11ths, .l11ths, .xl11ths {
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s11ths.s3 {
+    width: 27.272727272%;
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.m11ths.s3 {
+        width: 27.272727272%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .row .col.l11ths.s3 {
+        width: 27.272727272%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .row .col.xl11ths.s3 {
+        width: 27.272727272%;
+    }
+}
+
+.row .col.s11ths.s1 {
+    width: 9.09090909%;
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.m11ths.s1 {
+        width: 9.09090909%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .row .col.l11ths.s1 {
+        width: 9.09090909%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .row .col.xl11ths.s1 {
+        width: 9.09090909%;
+    }
+}
+
+/* ---------- Tabs ---------- */
+
+#csci323-hard-copy-creator .tabs {
+    background-color: transparent;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: transparent;
+    border-color: #e7dfdd;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.tabs .tab a.active {
+    color: #e7dfdd !important;
+}
+
+.tabs .tab a:hover:not(.active) {
+    color: lightblue !important;
+}
+
+.tabs .indicator {
+    background-color: #e7dfdd !important;
+    height: 1px;
+}
+
+/* ---- Nav-bar ---- */
+
+.nav-wrapper>.brand-logo>img {
+    max-height: 64px;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 601px) {
+    .nav-wrapper>.brand-logo>img {
+        max-height: 56px;
+    }
+}
+
+/* ---- File Fields ---- */
+
+#hard-copy-file-selection .file-field {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+#hard-copy-file-selection .file-field>.file-path-wrapper {
+    display: none;
+}
+
+#external-algorithm-steps {
+    padding: .18rem;
+}
+
+#csci323-hard-copy-creator {
+    background-image: url("../images/dark-mosaic.png");
+    background-color: #0d0c11;
+}
+
+#csci323-hard-copy-creator textarea {
+    color: white;
+}
+
+#csci323-hard-copy-creator .btn {
+    background-color: #6d7993;
+    border: 1px outset #6d7993;
+}
+
+#csci323-hard-copy-creator .btn {
+    color: white;
+}
+
+#csci323-hard-copy-creator label {
+    color: lightgrey;
+}
+
+#csci323-hard-copy-creator input {
+    color: white;
+}
+
+#csci323-hard-copy-creator input:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #a239ca;
+    -webkit-box-shadow: 0 1px 0 0 #a239ca;
+    box-shadow: 0 1px 0 0 #a239ca;
+}
+
+/* ---- Dropdown List ---- */
+
+.select-wrapper input {
+    color: lightgray;
+}
+
+#csci323-hard-copy-creator .select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #a239ca;
+}
+
+#csci323-hard-copy-creator .select-wrapper>ul {
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+#csci323-hard-copy-creator .select-wrapper>.dropdown-content li>span {
+    color: inherit;
+}
+
+#csci323-hard-copy-creator .select-wrapper>.dropdown-content li {
+    background: #0f111a;
+    color: white;
+}
+
+#csci323-hard-copy-creator .select-wrapper>.dropdown-content li:hover {
+    background: white;
+    color: black;
+}
+
+/* ----Colllections & List Items ---- */
+
+.collection {
+    border-color: white;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 1px;
+}
+
+#csci323-hard-copy-creator .collection-item {
+    background: transparent;
+    color: white;
+}
+
+#csci323-hard-copy-creator .collection-item:not(:last-child) {
+    border-color: grey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+input[type="radio"]:checked+span::after {
+    background-color: #eac67a;
+    border: 2px solid #eac67a;
 }
