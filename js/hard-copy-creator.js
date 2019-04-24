@@ -28,8 +28,11 @@ $(document).ready(function() {
 function onFilesUpdated(event) {
     var tableToUpdate = $(`#${event.currentTarget.getAttribute("id")}TableBody`);
     var fileList = event.currentTarget.files;
+    updateTable(tableToUpdate, fileList);
+}
+
+function updateTable(tableToUpdate, fileList) {
     tableToUpdate.empty();
-    console.log(fileList);
     for(i = 0; i < fileList.length; ++i) {
         tableToUpdate.append(`<tr><td>${fileList[i].name}</td></tr>`);
     }
