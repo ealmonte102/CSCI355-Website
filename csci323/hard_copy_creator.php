@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@2.9.5/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../css/froala_text.css">
     <link rel="stylesheet" type="text/css" href="../css/main_theme.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
@@ -63,36 +68,37 @@
                 </div>
             </section>
             <div class="divider"></div>
-            <div class="row">
+            <section class="row">
                 <h3 class="col s12 center-align">Algorithm Steps</h3>
-                <div class="valign-wrapper col s12">
-                    <label class="col l3">
-                        <input type="radio" value="external" name="algorithm_step_choice">
-                        <span>Use External File</span>
-                    </label>
-                    <div class="file-field input-field col l9">
-                        <div class="btn transparent">
-                            <span>Open</span>
-                            <input type="file" name="algorithm_steps_file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input id="algorithm_step_file" class="file-path validate" type="text" placeholder="Upload Algorithm Steps">
+                <div class="col s12">
+                    <div class="row">
+                        <label class="col s12 m4 l2">
+                            <input type="radio" value="external" name="algorithm_step_choice">
+                            <span>Use External File</span>
+                        </label>
+                        <div class="file-field input-field col s12 m8 l10">
+                            <div class="btn transparent">
+                                <span>Open</span>
+                                <input type="file" name="algorithm_steps_file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input id="algorithm_step_file" class="file-path validate" type="text" placeholder="Upload Algorithm Steps">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="valign-wrapper col s12">
-                    <label class="col l3">
-                        <input type="radio" value="internal" name="algorithm_step_choice">
-                        <span>Write Steps</span>
-                    </label>
-                    <div class="col l9">
-                        <textarea id="algorithm-steps" class="materialize-textarea" name="algorithm_steps_text"></textarea>
-                        <label for="algorithm-steps">Algorithm Steps</label>
+                <div class="col s12">
+                    <div class="row">
+                        <label class="col s12 m3 l2">
+                            <input type="radio" value="internal" name="algorithm_step_choice" checked>
+                            <span>Write Steps</span>
+                        </label>
+                        <div class="col s12 m9 l10">
+                            <textarea id="algorithm-steps" name="algorithm_steps_text"></textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <div class="divider"></div>
             <section class="row">
                 <h3 class="col s12 center-align">Project Files</h3>
@@ -187,8 +193,14 @@
         </div>
     </footer>
     <!-- Javascript loading to optimize speed-->
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-    <script src="../js/materialize.min.js"></script>
-    <script src="../js/hard-copy-creator.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/hard-copy-creator.js"></script>
+     <!-- Include external JS libs. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.9.5/js/froala_editor.pkgd.min.js"></script>
+
 </body>
 </html>

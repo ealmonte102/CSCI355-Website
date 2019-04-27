@@ -19,6 +19,12 @@ $(document).ready(function() {
     $("#outputFiles").change(onFilesUpdated);
     $("#inputFiles").change(onFilesUpdated);
     $("#sourceCodeFile").change(onFilesUpdated);
+    $('textarea').froalaEditor({
+        theme: 'custom',
+        toolbarButtons: ['formatOL', 'fullscreen', "underline"],
+        charCounterCount: false,
+        placeholderText: "Write your algorithm steps here..."
+    });
 });
 
 /**

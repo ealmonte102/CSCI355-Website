@@ -1,4 +1,27 @@
 <?php 
+    function var_dump_pre($mixed = null) {
+        echo '<pre>';
+        var_dump($mixed);
+        echo '</pre>';
+        return null;
+    }
+
+    function recursivePrint(DOMNode $domNode, $currentIndentation, $stepNumber, &$destination) {
+        if($domNode->childNodes == null) {
+            for($i = 0; $i < $currentIndentation; $i++) {
+                $destination .= ' ';
+            }
+            $destination .= $stepNumber . ')';
+            $destination .= $domNode->textContent;
+            $destination .= PHP_EOL;
+        } else {
+            recursivePrint($domNode->childNodes[0], $currentIndentation, $stepNumber, $destination);
+            for($i = 1; $i < $domNode->childNodes->length; $i++) {
+                recursivePrint($domNode->childNodes[$i], $currentIndentation + 4, $stepNumber . '.' . $i, $destination);
+            }
+        }
+    }
+
     $config = new stdClass;
     $config->name = htmlspecialchars($_POST["student_name"]);
     $config->language = htmlspecialchars($_POST["project_language"]);
@@ -27,7 +50,11 @@
         array_push($config->output_files, $outputFile);
     }
     if($_POST["algorithm_step_choice"] == "internal") {
-        $config->algorithm_steps = $_POST["algorithm_steps_text"];
+        $doc = new DOMDocument();
+        $doc->loadHTML($_POST["algorithm_steps_text"], LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        for($i = 0; $i < $doc->firstChild->childNodes->length; ++$i) {
+            recursivePrint($doc->firstChild->childNodes[$i], 0, $i + 1, $config->algorithm_steps);
+        }
     } else {
         $config->algorithm_steps = file_get_contents($_FILES["algorithm_step_file"]["tmp_name"]);
     }
