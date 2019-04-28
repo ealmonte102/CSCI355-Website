@@ -21,7 +21,7 @@ $(document).ready(function() {
     $("#sourceCodeFile").change(onFilesUpdated);
     $('textarea').froalaEditor({
         theme: 'custom',
-        toolbarButtons: ['formatOL', 'fullscreen', "underline"],
+        toolbarButtons: ['formatOL', 'fullscreen', "underline", "bold"],
         charCounterCount: false,
         placeholderText: "Write your algorithm steps here..."
     });
