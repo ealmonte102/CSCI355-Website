@@ -127,7 +127,7 @@ $configFileName = tempnam(sys_get_temp_dir(), "conf");
 $configFile = fopen($configFileName, "w");
 fwrite($configFile, json_encode($config));
 fclose($configFile);
-$filename = shell_exec("python3 ../python/report_generator.py " . $configFileName);
+$filename = shell_exec("../python/venv/bin/python3 ../python/report_generator.py " . $configFileName);
 header("Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document");
 header("Content-Transfer-Encoding: Binary");
 header("Content-disposition: attachment; filename=" . $filename);
