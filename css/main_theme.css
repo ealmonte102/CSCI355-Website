@@ -7,6 +7,10 @@ body {
     color: white;
 }
 
+body input {
+    font-family: Montserrat;
+}
+
 /* Navigation Bar */
 nav {
     background-color: #1E6199;

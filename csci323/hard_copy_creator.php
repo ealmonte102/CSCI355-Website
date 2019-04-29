@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/froala_text.css">
     <link rel="stylesheet" type="text/css" href="../css/main_theme.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Teko" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Teko" rel="stylesheet">
     <title> CSCI 323 Home Page - Evan Almonte</title>
 </head>
 

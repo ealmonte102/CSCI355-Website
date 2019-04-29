@@ -2,6 +2,7 @@ import os
 import sys
 import docx
 import json
+import re;
 from docx.shared import Inches
 
 TEMPLATE_PATH = '../assets/hard_submission_template.docx'
@@ -24,12 +25,35 @@ class ReportGenerator():
 
         for step in config["algorithm_steps"].splitlines():
             underline = False
+            bold = False
+            pattern = re.compile("^\\s*\\d*\\.?\\d+\\)")
+            run = None
             if step.startswith('__'):
                 step = step[2:step.find('__', 2)]
                 underline = True
-            p = document.add_paragraph(step)
+            if step.startswith('#'):
+                step = step[1:step.find('#', 1)]
+                bold = True;
+            if pattern.match(step):
+                bullet = step[:step.find(")")]
+                step = step[step.find(")") + 1:].strip()
+                if step.startswith('__'):
+                    step = step[2:step.find('__', 2)]
+                    underline = True
+                if step.startswith('#'):
+                    step = step[1:step.find('#', 1)]
+                    bold = True;
+                p = document.add_paragraph()
+                p.add_run(bullet)
+                p.add_run(") ")
+                run = p.add_run(step)
+            else:
+                p = document.add_paragraph(step)
+                run = p.runs[0];
             if underline:
-                p.runs[0].underline = True
+                run.underline = True
+            if bold:
+                run.bold = True
         document.add_page_break()
         document.add_paragraph('Input', 'CSCI 323 Section Heading')
         for inputFile in config["input_files"]:

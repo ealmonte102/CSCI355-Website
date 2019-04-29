@@ -16,8 +16,8 @@
 }
 .custom-theme.fr-box.fr-basic .fr-element {
   color: #ffffff;
-  padding: 16px;
   font-size: 13px;
+  padding: 16px;
   overflow-x: auto;
   min-height: 48px;
 }
