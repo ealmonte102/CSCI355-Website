@@ -2,7 +2,7 @@ import os
 import sys
 import docx
 import json
-import re;
+import re
 from docx.shared import Inches
 
 TEMPLATE_PATH = '../assets/hard_submission_template.docx'
