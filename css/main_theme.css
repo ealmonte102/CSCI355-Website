@@ -1,4 +1,4 @@
-/* Remove browser margin and padding */
+
 body {
     font-family: Montserrat;
     margin: 0;
@@ -6,11 +6,6 @@ body {
     background-color: #323639;
     color: white;
 }
-
-body input {
-    font-family: Montserrat;
-}
-
 /* Navigation Bar */
 nav {
     background-color: #1E6199;
@@ -123,6 +118,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 input {
     color: inherit;
+    font-family: Montserrat;
 }
 
 /* ---- Radio Buttons ---- */
@@ -263,7 +259,7 @@ textarea {
     border-color: #5d5f61;
 }
 
-/* ----- Tabel Strips ---- */
+/* ----- Table ---- */
 table.striped>tbody>tr:nth-child(odd) {
     background-color: rgba(255,255,255,0.1);
 }
