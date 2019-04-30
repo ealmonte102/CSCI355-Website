@@ -28,6 +28,9 @@ function recursivePrint(DOMNode $domNode, $currentIndentation, $stepNumber, $rec
             for ($i = 0; $i < $currentIndentation; $i++) {
                 $destination .= ' ';
             }
+            if(ctype_digit(strval($stepNumber))) {
+                $destination .= "Step ";
+            }
             $destination .= $stepNumber . ') ';
             if ($modifiers["u"]) {
                 $destination .=  '__';
