@@ -6,15 +6,15 @@ function var_dump_pre($mixed = null) {
     return null;
 }
 
-function recursivePrint(DOMNode $domNode, $currentIndentation, $stepNumber, $recievedNumber, &$destination) {
+function recursivePrint(DOMNode $domNode, $level, $stepNumber, $recievedNumber, &$destination) {
     for ($i = 0; $i < $domNode->childNodes->length; $i++) {
         $child = $domNode->childNodes[$i];
         if ($child->nodeName == 'ol') {
-            recursivePrint($child, $currentIndentation + 4, $stepNumber, false, $destination);
+            recursivePrint($child, $level + 1, $stepNumber, false, $destination);
         } else if ($stepNumber == null) {
-            recursivePrint($child, $currentIndentation, ($i + 1), true, $destination);
+            recursivePrint($child, $level, ($i + 1), true, $destination);
         } else if (!$recievedNumber) {
-            recursivePrint($child, $currentIndentation, $stepNumber . '.' . ($i + 1), true, $destination);
+            recursivePrint($child, $level, $stepNumber . '.' . ($i + 1), true, $destination);
         } else {
             $modifiers = ["u" => false, "strong" => false];
             while ($child->childNodes != null && ($child->nodeName != "text" || $child->nodeName != "br")) {
@@ -25,7 +25,7 @@ function recursivePrint(DOMNode $domNode, $currentIndentation, $stepNumber, $rec
             if ($child->nodeName == "br") {
                 continue;
             }
-            for ($i = 0; $i < $currentIndentation; $i++) {
+            for ($j = 0; $j < $level * 4; $j++) {
                 $destination .= ' ';
             }
             if(ctype_digit(strval($stepNumber))) {
